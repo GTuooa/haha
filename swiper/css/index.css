@@ -1,0 +1,85 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding:0;
+}
+p{
+    margin: 0;
+    padding:0;
+}
+.swiper-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background:#000 url("../img/bg3.jpg") 0 100% no-repeat;
+    background-size: 100% 50%;
+}
+.one{
+    width: 100%;
+    height: 4.3em;
+    background: url("../img/1.png") no-repeat center center;
+    margin-top: 1.85rem;
+}
+.two{
+    width: 100%;
+    height: 4.3em;
+    background: url("../img/3.png") no-repeat center top;
+    margin-top: 1.85rem;
+}
+.three{
+    width: 100%;
+    height: 4.3em;
+    background: url("../img/2.png") no-repeat center top;
+    margin-top: 1.85rem;
+}
+.p11,.p21,.p31{
+    text-align: center;
+    font-size: 0.69rem;
+    color: #f0f0f0;
+    margin-top: 0.7rem;
+}
+.p12,.p22,.p32{
+    text-align: center;
+    font-size: 0.5rem;
+    color: #fff;
+    margin-top: 0.5rem;
+}
+
+
+/*分页其样式*/
+.swiper-container-horizontal>.swiper-pagination-bullets{
+    bottom: 1.5rem;
+    left: 0;
+    width: 100%;
+}
+.swiper-pagination-bullet {/*大小*/
+    width: 0.3rem;
+    height: 0.3rem;
+    opacity: 1;
+    border: 0.05em solid #fff;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 0.15rem;
+}
+.swiper-pagination-bullet-active {/*移动到时的背景*/
+    opacity: 1;
+    background: #fff;
+
+}
+/*动画
+*/
+.swiper-pagination {
+    position: absolute;
+    text-align: center;
+    -webkit-transition: none;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    /* transition: .3s; */
+    -webkit-transform: none;
+    -ms-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+    /* transform: translate3d(0,0,0); */
+    z-index: 10;
+}
