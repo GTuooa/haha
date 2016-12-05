@@ -1,0 +1,174 @@
+html.body{
+    width: 100%;
+}
+html,body,p,span,a{
+    margin: 0;
+    padding:0;
+}
+*{
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.header{
+    width: 100%;
+    height: 1.12rem;
+    background: red;
+    display: flex;
+    justify-content: space-between;
+}
+.header .list{
+    font-size: 0.5rem;
+    color: #fff;
+    line-height: 1.12rem;
+    width: 33.33%;
+    height: 100%;
+    text-align: center;
+}
+.header .list:nth-child(3){
+    text-align: right;
+    padding-right: 0.3rem;
+}
+.menu{
+    width: 0.5rem;
+    height: 0.5rem;
+    margin:0.256rem 0 0 0.3rem ;
+}
+.menu div{
+    width: 0.3rem;
+    height: 0.05rem;
+    margin-top: 0.12rem;
+    background: #fff;
+}
+.nav{
+    width: 100%;
+    height: 0.8rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav a{
+    font-size: 0.36rem;
+    color: black;
+    font-weight: bold;
+}
+.nav a:nth-child(1){
+    color: red;
+}
+.banner{
+    width: 100%;
+    height: 3.65rem;
+    background: url("../img/ban1.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+.con{
+    width: 100%;
+    height: 3.7rem;
+    margin-top: 0.3rem;
+    padding:0 0.3rem;
+}
+.con-l{
+    float: left;
+    width:35% ;
+    height: 100%;
+}
+.con-r{
+    float: left;
+    width:65% ;
+    height: 100%;
+    padding-left: 0.3rem;
+}
+.title{
+    width: 100%;
+    height: 1rem; line-height: 0.5rem;
+}
+.title a{
+    font-size: 0.3rem;
+
+
+}
+.show{
+    width: 100%;
+    /*height: 2rem;*/
+    font-size: 0.2rem;
+    line-height: 0.6rem;
+}
+.time{
+    width: 100%;
+    height: 0.7rem;
+}
+.con1{
+    background: url("../img/con1.png") no-repeat;
+    background-size: 100% 100%;
+}
+.con2{
+    background: url("../img/con2.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+.con3{
+    background: url("../img/con3.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+.con4{
+    background: url("../img/con4.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+span{
+    font-size: 0.2rem;
+}
+.number{
+    margin-left: 0.5rem;
+    margin-right: 0.3rem;
+}
+
+/*footer*/
+.footer{
+    width: 100%;
+    height:1.2rem;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom:0.2rem;
+}
+.footer .foot-list {
+    font-size: 0.5rem;
+    color: #fff;
+    width: 25%;
+    height: 100%;
+    text-align: center;
+    letter-spacing: 0.1rem;
+}
+.icon1:before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.5rem;
+    background:url("../img/icon1.png") no-repeat center;
+    background-size: 40% 100%;
+}
+.icon2:before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.5rem;
+    background:url("../img/icon2.png") no-repeat center;
+    background-size: 40% 100%;
+}
+.icon3:before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.5rem;
+    background:url("../img/icon3.png") no-repeat center;
+    background-size: 40% 100%;
+}
+.icon4:before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.5rem;
+    background:url("../img/icon4.png") no-repeat center;
+    background-size: 40% 100%;
+}
