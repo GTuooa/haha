@@ -49,6 +49,9 @@ input{
     border-radius: 0.2rem;
     border: 0.01rem solid red;
 }
+.form a{
+    color: #fff;
+}
 .footer{
     width: 70%;
     height:1.5rem ;

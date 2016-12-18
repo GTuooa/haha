@@ -17,11 +17,12 @@ p{
     background-size: 100% 50%;
 }
 .first{
-    background: url("../img/yy1.jpg") no-repeat center center;
+    background: url("../img/x1.jpg") no-repeat center center;
     background-size: 100% 100%;
 }
+/*yy1.jpgyy2.jpg*/
 .second{
-    background: url("../img/yy2.jpg") no-repeat center center;
+    background: url("../img/x2.jpg") no-repeat center center;
     background-size: 100% 100%;
 }
 .third{
@@ -48,12 +49,15 @@ p{
     font-size: 0.69rem;
     color: #000;
     margin-top: 0.2rem;
+    font-weight: bold;
 }
 .p12,.p22,.p32{
     text-align: center;
     font-size: 0.5rem;
     color: #000;
     margin-top: 0.2rem;
+    font-weight: bold;
+
 }
 
 
