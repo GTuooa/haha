@@ -25,6 +25,9 @@ a,input{
     justify-content: space-between;
     align-items: center;
 }
+.header a{
+    color: #fff;
+}
 .header .list{
     font-size: 0.5rem;
     color: #fff;

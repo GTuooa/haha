@@ -24,6 +24,9 @@ a,input{
     display: flex;
     justify-content: space-between;
 }
+.header a{
+    color: #fff;
+}
 .header .list{
     font-size: 0.5rem;
     color: #fff;
