@@ -1,0 +1,28 @@
+<script src="../public/js/index.js"></script>
+
+<div ng-controller="phone">
+    <!--搜索框-->
+    <div class="mui-input-row mui-search mui-input-search" style="margin-top: 44px">
+        <input type="search" class="mui-input-clear" placeholder="" ng-model="search">
+    </div>
+    <!--列表-->
+    <h3 ng-show="type!==''" ng-click="show()">显示全部</h3>
+    <ul class="mui-table-view">
+
+        <li class="mui-table-view-cell" ng-repeat="item in data | filter:{en:type} |filter:search track by $index ">
+            <h3>
+                {{item.en|uppercase}}
+            </h3>
+            <a href="tel:" ng-repeat="aa in item track by $index">
+                <span>{{aa.name}}</span>
+                <span>{{aa.phone}}</span>
+            </a>
+        </li>
+    </ul>
+    <!--右侧栏-->
+    <div class="en" style="position: fixed;right:5px;width:30px;z-index:999;top:94px; text-align: center;">
+        <div ng-repeat="item in data" ng-click="filter(item.en)">
+            {{item.en|uppercase}}
+        </div>
+    </div>
+</div>

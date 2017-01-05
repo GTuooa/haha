@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <title>Document</title>
+</head>
+<body ng-app="myapp">
+<div ng-view></div>
+{{id}}
+</body>
+<script>
+    angular.module("myapp",["ngRoute"])
+            .config(function ($routeProvider) {
+        $routeProvider.when("/",{
+            templateUrl:"routerData.html"
+        }).when("/list/:id",{
+            templateUrl:"list.html",
+            controller:"list"
+        }).otherwise("/")
+    })
+      .controller("list",function ($scope,$routeParams) {
+        $scope.id=$routeParams.id
+    })
+</script>
+</html>

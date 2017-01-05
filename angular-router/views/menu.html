@@ -1,0 +1,10 @@
+<ul>
+    <li ng-repeat="item in data">
+        <span>{{item.name}}</span>
+        <ul>
+            <li ng-repeat="item1 in item">
+                {{item1.son.name}}
+            </li>
+        </ul>
+    </li>
+</ul>
