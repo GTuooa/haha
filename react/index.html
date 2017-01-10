@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="js/browser.min.js"></script>
+    <style>
+        .color{
+            width: 200px;
+            height: 50px;
+            border: 1px solid red;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+<div id="root"></div>
+<div id="timer"></div>
+<div id="Todo"></div>
+<div id="info"></div>
+</body>
+<script type="text/babel">
+    //demo1
+    class HDan extends React.Component {
+        render() {
+            return <div>Hello {this.props.name}</div>;
+        }
+    }
+
+    ReactDOM.render(<HDan name="Jane" />, document.getElementById("root"));
+
+    //timer
+    class Timer extends React.Component {
+        constructor() {
+            super();
+            this.state = {second: 0};
+        }
+
+        add() {
+            this.setState(() => ({
+                second: this.state.second + 1
+            }));
+        }
+
+        componentDidMount() {//组件渲染完成 已经出现在dom文档里
+            this.interval = setInterval(() => this.add(), 1000);
+        }
+
+        componentWillUnmount() {//组件出现前 就是dom还没有渲染到html文档里面
+            clearInterval(this.interval);
+        }
+
+        render() {
+            return (
+                <div>
+                    Seconds Elapsed: {this.state.second}
+                </div>
+            );
+        }
+    }
+
+    ReactDOM.render(<Timer />, document.getElementById("timer"));
+
+
+    //todo
+   class Todo extends React.Component{
+       constructor(){
+           super();
+           this.state={item:[],title:''}
+       }
+       change(e){
+           this.setState({title: e.target.value});
+       }
+       add(e){
+           var obj={title:this.state.title};
+           this.setState({
+               item: this.state.item.concat(obj),
+               title:''
+           });
+
+       }
+
+       render(){
+           return <div>
+               <h3>ToDo--List</h3>
+               <ToList data={this.state.item}/>
+               <input type="text" onChange={this.change.bind(this)}/>
+               <input type="button" onClick={this.add.bind(this)} value="添加"/>
+           </div>
+       }
+   }
+
+
+   class ToList extends React.Component{
+       constructor(){
+           super();
+       }
+       render(){
+           return (
+                   <ul>
+                       {this.props.data.map((con,index)=>(
+                           <li key={index}>{con.title}</li>
+                       ))}
+                   </ul>
+           );
+       }
+   }
+
+   ReactDOM.render(<Todo/>,document.getElementById("Todo"))
+
+
+    //表单
+
+    var Input = React.createClass({
+        getInitialState: function() {
+            return {value: 'Hello!'};
+        },
+        handleChange: function(event) {
+            this.setState({value: event.target.value});
+        },
+        render: function () {
+            var value = this.state.value;
+            return (
+                    <div>
+
+                        <div className="color">{value}</div>
+                        <input type="text" value={value} onChange={this.handleChange} />
+
+                    </div>
+            );
+        }
+    });
+
+    ReactDOM.render(<Input/>, document.getElementById("info"));
+</script>
+</html>
