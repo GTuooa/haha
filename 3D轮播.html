@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D轮播</title>
+    <link rel="stylesheet" href="css/d3d.css">
+</head>
+<body>
+<div class="boxs">
+</div>
+</body>
+<script>
+window.onload=function() {
+    var boxs = document.querySelector(".boxs");
+    var widths = boxs.offsetWidth;//800
+    var heights = boxs.offsetHeight;//400
+    var num = 10;
+    var arr = [];
+    //创建每个大盒子*/
+    for (var i=0; i < num; i++) {
+        //场景
+        var scene = document.createElement("div");
+        scene.style.cssText = "width:100%;height:"+heights/num+"px;position:absolute;left:0;top:"+i*heights/num+"px;";
+        //盒子
+        var box = document.createElement("div");
+        box.style.cssText = "width:100%;height:100%;position:absolute;left:0;top:0;transform-origin:center center 400px;transform:translateZ("+-widths+"px);transition:transform 2s linear "+i*0.3+"s;transform-style:preserve-3d";
+        //创建面板
+        for (var j=0; j < 6; j++){
+             var panel = document.createElement("div");
+            panel.style.cssText = "position:absolute;left:0;top:0;";
+            if (j == 0) {//前
+                panel.style.width = "100%";
+                panel.style.height = "100%";
+                panel.style.transformOrigin = "bottom";
+                panel.style.transform = "translateZ("+widths+"px)";
+                panel.style.background = "url(img/4.jpg) no-repeat 0 "+heights/num*-i+"px";
+            }
+            else if (j == 1) {//左
+                panel.style.width = "100%";
+                 panel.style.height = "100%";
+                 panel.style.transformOrigin = "left";
+                 panel.style.transform = "rotateY(-90deg)";
+                 panel.style.background= "url(img/2.jpg) no-repeat 0 " + heights / num * -i + "px";
+            }
+            else if (j == 2) {//右
+                 panel.style.width = "100%";
+                 panel.style.height = "100%";
+                 panel.style.transformOrigin = "right";
+                 panel.style.transform = "rotateY(90deg)";
+                 panel.style.background = "url(img/1.jpg) no-repeat 0 "+heights/num*-i+"px";
+            }
+            else if (j == 3) {//后
+                 panel.style.width = "100%";
+                 panel.style.height = "100%";
+                 panel.style.transform = "rotateY(180deg)";
+                 panel.style.background = "url(img/3.jpg) no-repeat 0 "+heights/num*-i+"px";
+            }
+        box.appendChild(panel);
+
+    }//面板
+        arr.push(box);
+        scene.appendChild(box);
+        boxs.appendChild(scene);
+}//大盒子
+    //动起来
+
+    /*var flog=true;
+    var t=setInterval(function(){
+        if(flog){
+            for (var i=0; i<arr.length;i++) {
+                if (i<= 5) {
+                    arr[i].style.animation = "dd 8s linear "+0.2*i+"s";
+                }else{
+                    arr[i].style.animation = "dd 8s linear "+1.8-0.2*i+"s";
+                }
+                arr[i].transformOrigin="center center 400px";
+                arr[i].transform="translateZ(-800px)";
+            }
+            box.style.animation="dd 8s";
+            flog=false;
+        }else{
+            for (var i=0; i<arr.length;i++) {
+                arr[i].style.animation = "";
+            }
+            flog=true;
+        }
+    },8000)*/
+
+
+
+        var init=0;
+        var t= setInterval(move,5000);
+        function move() {
+            init+=90;
+            for (var i=0; i<arr.length;i++){
+                arr[i].style.transform="translateZ("+-widths+"px) rotateY("+init+"deg)";
+            }
+        }
+        window.onblur=function(){
+            clearInterval(t);
+        }
+        window.onfocus=function(){
+            t=setInterval(move,5000);
+        }
+}
+</script>
+</html>
