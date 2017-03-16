@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#main{
+    position: relative;
+}
+.box{
+    padding: 15px 10px 0 10px;
+    float: left;
+    transition: all 1s;
+}
+/*.box:hover{*/
+    /*transform: rotateY(-180deg);*/
+    /*!*backface-visibility:hidden;*!*/
+/*}*/
+.pic{
+    padding: 10px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ccc;
+}
+.pic>img{
+    width: 165px;
+    height: auto;
+}
